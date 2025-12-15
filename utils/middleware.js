@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const logger = require('./logger') // eslint-disable-line no-unused-vars
 const User = require('../models/user')
 
 const unknownEndpoint = (request, response) => {

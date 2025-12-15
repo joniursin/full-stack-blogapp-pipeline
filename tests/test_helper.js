@@ -1,4 +1,4 @@
-//const Blog = require('../models/blog')
+const Blog = require('../models/blog') // eslint-disable-line no-unused-vars
 
 const initialBlogs = [
     {

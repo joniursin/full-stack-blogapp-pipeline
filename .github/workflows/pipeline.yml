@@ -20,5 +20,16 @@ jobs:
         run: npm install
       - name: Install Dependencies Frontend
         run: cd bloglist-frontend && npm install
+
       - name: Check Code Style
         run: npm run eslint
+
+      - name: Start Backened in Test Mode
+        run: npm run start:test
+      - name: Start Frontend
+        run: cd bloglist-frontend && npm run dev
+
+      - name: Run Backend Tests
+        run: npm run test
+      - name: Run Frontend Tests
+        run: cd bloglist-frontend/tests-frontend && npm run test

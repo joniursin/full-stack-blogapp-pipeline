@@ -3,22 +3,22 @@ const { createBlog, login } = require('./helper')
 
 describe('Blog app', () => {
   beforeEach(async ({ page, request }) => {
-    await request.post('/api/testing/reset')
-    await request.post('/api/users', {
+    await request.post('http://localhost:3003/api/testing/reset')
+    await request.post('http://localhost:3003/api/users', {
         data: {
             username: 'tester',
             password: 'password',
             name: 'tester name'
         }
     })
-    await request.post('/api/users', {
+    await request.post('http://localhost:3003/api/users', {
         data: {
             username: 'tester2',
             password: 'password',
             name: 'tester name2'
         }
     })
-    await page.goto('')
+    await page.goto('http://localhost:5173')
   })
 
   test('Login form is shown', async ({ page }) => {
