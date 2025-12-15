@@ -28,9 +28,13 @@ jobs:
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NODE_ENV: test
+          PORT: 3003
         run: npm run start:test &
       - name: Start Frontend
         run: cd bloglist-frontend && npm run dev &
+    
+      - name: Wait for servers
+        run: sleep 10
 
       - name: Run Backend Tests
         run: npm run test
