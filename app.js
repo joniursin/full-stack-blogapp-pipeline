@@ -1,7 +1,6 @@
 const config = require('./utils/config')
 const express = require('express')
 const app = express()
-const logger = require('./utils/logger')
 const blogsRouter = require('./controllers/blogs')
 const usersRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')

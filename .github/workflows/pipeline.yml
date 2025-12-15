@@ -16,7 +16,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Install Dependencies
+      - name: Install Dependencies Backend
         run: npm install
+      - name: Install Dependencies Frontend
+        run: cd bloglist-frontend && npm install
       - name: Check Code Style
         run: npm run eslint

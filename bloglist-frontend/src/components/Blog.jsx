@@ -27,7 +27,7 @@ const Blog = (props) => {
       likes: likes + 1,
       user: props.blog.user.id
     }
-    const response = await blogService.update(props.blog.id, blogObject)
+    await blogService.update(props.blog.id, blogObject)
     setLikes(blogObject.likes)
     blogService.getAll().then(blogs =>
       props.setBlogs( blogs.sort((a, b) => b.likes - a.likes) )
@@ -37,7 +37,7 @@ const Blog = (props) => {
   const deleteBlog = async (event) => {
     if (window.confirm(`Remove blog ${props.blog.title} by ${props.blog.author}`)) {
       event.preventDefault()
-      const response = await blogService.remove(props.blog.id, props.user.token)
+      await blogService.remove(props.blog.id, props.user.token)
       setDeleted(true)
     }
   }

@@ -42,7 +42,7 @@ const App = () => {
       setPassword('')
       setNotification(['logged in', 'notification'])
       setTimeout(() => { setNotification([null, 'notification']) }, 5000)
-    } catch (exception) {
+    } catch (exception) { // eslint-disable-line no-unused-vars
       setNotification(['wrong username or password', 'error'])
       setTimeout(() => { setNotification([null, 'notification']) }, 5000)
     }
@@ -55,7 +55,7 @@ const App = () => {
       setBlogs(blogs.concat({ ...response, user: blogObject.user }))
       setNotification([`a new blog ${blogObject.title} by ${blogObject.author} added`, 'notification'])
       setTimeout(() => { setNotification([null, 'notification']) }, 5000)
-    } catch (exception) {
+    } catch (exception) { // eslint-disable-line no-unused-vars
       setNotification(['blog creation failed', 'error'])
       setTimeout(() => { setNotification([null, 'notification']) }, 5000)
     }
