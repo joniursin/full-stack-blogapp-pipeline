@@ -25,7 +25,7 @@ jobs:
         run: npm run eslint
 
       - name: Start Backened in Test Mode
-        run: npm run start:test
+        run: NODE_ENV=test npm run start:test
       - name: Start Frontend
         run: cd bloglist-frontend && npm run dev
 
