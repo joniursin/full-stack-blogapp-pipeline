@@ -25,15 +25,12 @@ jobs:
         run: npm run eslint
 
       - name: Start Backened in Test Mode
-        run: npm run start:test &
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
           NODE_ENV: test
+        run: npm run start:test &
       - name: Start Frontend
         run: cd bloglist-frontend && npm run dev &
-    
-      - name: Wait for servers
-        run: sleep 10
 
       - name: Run Backend Tests
         run: npm run test
