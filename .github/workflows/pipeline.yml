@@ -27,6 +27,7 @@ jobs:
       - name: Start Backened in Test Mode
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
           NODE_ENV: test
           PORT: 3003
         run: npm run start:test &
