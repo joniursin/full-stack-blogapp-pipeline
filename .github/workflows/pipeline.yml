@@ -38,6 +38,6 @@ jobs:
         run: sleep 10
 
       - name: Run Backend Tests
-        run: cd .. && npm run test
+        run: npm run test
       - name: Run Frontend Tests
         run: cd bloglist-frontend/tests-frontend && npm run test
