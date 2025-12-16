@@ -26,7 +26,6 @@ jobs:
 
       - name: Start Backened in Test Mode
         env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
           TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
           NODE_ENV: test
           PORT: 3003
@@ -35,7 +34,7 @@ jobs:
         run: cd bloglist-frontend && npm run dev &
     
       - name: Wait for servers
-        run: sleep 10
+        run: sleep 20
 
       - name: Run Backend Tests
         run: npm run test
